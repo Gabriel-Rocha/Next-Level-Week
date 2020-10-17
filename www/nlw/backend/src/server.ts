@@ -1,11 +1,13 @@
 import express from 'express';
-
 import './database/connection';
+
+import routes from './routes';
 
 
 const app = express();
 
 app.use(express.json());
+app.use(routes);
 
 //Rota = Conjunto
 //recurso = Usuarios
@@ -18,9 +20,7 @@ app.use(express.json());
 // PUT = Editar uma informação
 // DELETE = Delete uma informação
 
-app.get('/users', (request, response) => {
-    return response.json({ message: 'teste'});
-});
+
 
 app.listen(3333);
 
